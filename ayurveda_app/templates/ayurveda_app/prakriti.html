@@ -1,0 +1,170 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakriti Checker</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+   
+</head>
+<body>
+    <form action="{% url 'result'%}" method="post">
+        {% csrf_token %}
+       <div class="container">
+        <h1>Prakriti Predictor</h1>
+        <form>
+            <div>
+                <div style="width:50%">
+<label for="bodySize">Body Size:</label>
+<select id="bodySize">
+    <option value="0">Slim</option>
+    <option value="1">Medium</option>
+    <option value="2">Large</option>
+</select>
+
+<label for="bodyWeight">Body Weight:</label>
+<select id="bodyWeight">
+    <option name="bodyWeight" value="0">Low, has difficulty in putting on weight</option>
+    <option name="bodyWeight" value="1">Medium, can gain & lose weight easily</option>
+    <option name="bodyWeight" value="2">Overweight, Difficult to lose weight</option>
+</select>
+
+<label for="height">Height:</label>
+<select id="height">
+    <option name="height" value="0">Tall or short</option>
+    <option name="height"  value="1">Average</option>
+    <option name="height" value="2">Thin & sturdy / short & stocky</option>
+</select><label for="boneStructure">Bone Structure:</label>
+<select id="boneStructure">
+    <option name="bonneStructure" value="0">Light, small bones, Prominent joints</option>
+    <option name="bonneStructure" value="1">Medium bone structure</option>
+    <option name="bonneStructure" value="2">Large, broad shoulders, Heavy bone structure</option>
+</select>
+
+<label for="complexion">Complexion:</label>
+<select id="complexion">
+    <option name="complexion" value="0">Dark complexion, Tans easily</option>
+    <option name="complexion" value="1">Fair skin, sun burns easily</option>
+    <option name="complexion "value="2">White, pale, tans evenly</option>
+</select>
+
+<label for="generalFeelOfSkin">General feel of skin:</label>
+<select id="generalFeelOfSkin">
+    <option name="generalFeelOfSkin" value="0">Dry, cool</option>
+    <option name="generalFeelOfSkin" value="1">Smooth, Oily T-zone</option>
+    <option  name="generalFeelOfSkin" value="2">Oily, Cold</option>
+</select>
+
+<label for="textureOfSkin">Texture of Skin:</label>
+<select id="textureOfSkin">
+    <option name="textureOfSkin"  value="0">Dry, pigmentation and aging</option>
+    <option name="textureOfSkin"  value="1">Freckles, many moles, redness, rashes and acne</option>
+    <option name="textureOfSkin"  value="2">Soft, glowing and youthful</option>
+</select>
+
+<label for="hairColor">Hair Color:</label>
+<select id="hairColor">
+    <option name="hairColor" value="0">Dull, black, brown</option>
+    <option name="hairColor" value="1">Red, light brown, yellow</option>
+    <option name="hairColor" value="2">Brown</option>
+</select>
+
+<label for="appearanceOfHair">Appearance of Hair:</label>
+<select id="appearanceOfHair">
+    <option name="appearanceOfHair" value="0">Dry, Black Knotted, Brittle</option>
+    <option name="appearanceOfHair" value="1">Straight, Oily</option>
+    <option name="appearanceOfHair" value="2">Thick, Curly</option>
+</select>
+
+<label for="shapeOfFace">Shape of face:</label>
+<select id="shapeOfFace">
+    <option name="shapeOfFace" value="0">Long, angular, Thin</option>
+    <option name="shapeOfFace" value="1">Heart-shaped, pointed chin</option>
+    <option name="shapeOfFace" value="2">Large, round, Full</option>
+</select>
+
+<label for="eyes">Eyes:</label>
+<select id="eyes">
+    <option name="eyes"  value="0">Small, active, darting, dark eyes</option>
+    <option name="eyes" value="1">Medium sized, penetrating, light sensitive eyes</option>
+    <option name="eyes" value="2">Big, round, beautiful glowing eyes</option>
+</select>
+
+<label for="eyelashes">Eyelashes:</label>
+<select id="eyelashes">
+    <option name="eyelashes" value="0">Scanty eye lashes</option>
+    <option name="eyelashes" value="1">Moderate eye lashes</option>
+    <option name="eyelashes" value="2">Thick / Fused eye lashes</option>
+</select>
+
+<label for="blinkingOfEyes">Blinking of Eyes:</label>
+<select id="blinkingOfEyes">
+    <option name="blinkingofEyes" value="0">Excessive Blinking</option>
+    <option name="blinkingofEyes" value="1">Moderate blinking</option>
+    <option name="blinkingofEyes" value="2">More or less stable</option>
+</select>
+
+<label for="cheeks">Cheeks:</label>
+<select id="cheeks">
+    <option name="cheeks" value="0">Wrinkled, Sunken</option>
+    <option name="cheeks" value="1">Smooth, Flat</option>
+    <option name="cheeks" value="2">Rounded, Plump</option>
+</select>
+
+<label for="nose">Nose:</label>
+<select id="nose">
+    <option name="nose" value="0">Crooked, narrow, Small</option>
+    <option name="nose"  value="1">Pointed, Average</option>
+    <option name="nose"  value="2">Rounded, Large open nostrils</option>
+</select>
+
+<label for="teethAndGums">Teeth and gums:</label>
+<select id="teethAndGums">
+    <option name="teethAndGums" value="0">Irregular, protruding teeth, Receding gums</option>
+    <option  name="teethAndGums" value="1">Medium sized teeth, Reddish gums</option>
+    <option  name="teethAndGums" value="2">Big, white, strong teeth, Hearty gums</option>
+</select>
+
+<label for="lips">Lips:</label>
+<select id="lips">
+    <option name="lips" value="0">Tight, thin, dry lips which chaps easily</option>
+    <option name="lips" value="1">Lips are soft, medium-sized</option>
+    <option name="lips" value="2">Lips are large, soft, pink & full</option>
+</select>
+</div>
+<div style="width:50%">
+
+<label for="nails">Nails:</label>
+<select id="nails">
+    <option  name="nails" value="0">Blackish, Small, Brittle</option>
+    <option  name="nails" value="1 ">Redish, Small</option>
+    <option name="nails" value="2">Pinkish, Big, Smooth</option>
+</select>
+    
+
+<label for="appetite">Appetite:</label>
+<select id="appetite">
+    <option name="appetite" value="0">Irregular, Scanty</option>
+    <option name="appetite" value="1">Strong, Unbearable</option>
+    <option name="appetite" value="2">Slow but Steady</option>
+</select>
+
+<label for="likingTastes">Liking tastes:</label>
+<select id="likingTastes">
+    <option name="likingTastes"  value="0">Sweet / Sour / Salty</option>
+    <option name="likingTastes"  value="1">Sweet / Bitter Astringent</option>
+    <option name="likingTastes"  value="2">Pungent / Bitter / Astringent</option>
+</select>
+
+
+            <button type="submit">Submit</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
